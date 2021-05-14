@@ -30,6 +30,17 @@ while True:
 		host = input("Enter Website To Ping: ")
 		number = input("Enter How Many Times To Ping: ")
 
+	if command == 'local':
+		print("Your Local IPS Is: " + host_ip)
+
+	if command == 'proxy -l':
+		port = input("Enter Port: ")
+		os.system('python3 -m http.server ' + port)
+
+	if command == 'proxy -w':
+		port2 = input("Enter Port: ")
+		os.system('python -m http.server ' + port2)
+
 		def ping(host):
 			param = '-n' if platform.system().lower() == 'windows' else '-c'
 			command = ['ping', param, number, host]
